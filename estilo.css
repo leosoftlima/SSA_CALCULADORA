@@ -1,7 +1,8 @@
 img#logoUpe{
     position: absolute;
     height: 350px;
-    width: 350px;    
+    width: 350px;
+       
 }
 
 img#logoVest{
@@ -11,10 +12,18 @@ img#logoVest{
     filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.5);
     opacity:.50;
     position: absolute;
+
 }
 
 .container{
+    margin: 50px 0px 0px 450px;
     position: relative;
     z-index:9999;
+    float: left;
 }
- 
+
+.img-colegio{
+    width: 20%;
+    height: 20%;
+}
+
