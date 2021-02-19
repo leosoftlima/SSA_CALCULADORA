@@ -1,0 +1,24 @@
+{
+"login" : "leosoftlima",
+"senha" : "0123456789",
+"status": "true",
+"e-mail": "leo@gmail.com",
+"perfil": "admin",
+"dataCadastror":"19/02/2021"
+},
+{
+"login" : "paulocesar",
+"senha" : "9876543210",
+"status": "true",
+"e-mail": "paulocesar@gmail.com",
+"perfil": "admin",
+"dataCadastror":"18/02/2021"
+},
+{
+"login" : "allisson",
+"senha" : "567894321",
+"status": "true",
+"e-mail": "allisson@gmail.com",
+"perfil": "operador",
+"dataCadastror":"20/02/2021"
+}
