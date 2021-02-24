@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <title>Login</title>
     <meta charset="UTF-8">
@@ -7,37 +8,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
 
-   <!-- Compiled and minified CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-   <!-- Compiled and minified JavaScript -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
-   <style>
-        body{
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <style>
+        body {
             font-family: 'Yusei Magic', sans-serif;
-            background: rgba(0,0,0,0.03);
+            background: rgba(0, 0, 0, 0.03);
         }
 
-        h1{
+        h1 {
             text-align: center;
             margin-top: 5vw;
         }
 
-        h4, h6, p{
+        h4,
+        h6,
+        p {
             text-align: center;
         }
-        .formulario{
+
+        .formulario {
             width: 30vw;
             margin-top: 4vh;
             margin-left: 36vw;
             padding: 40px;
             text-align: center;
             background-color: #F0FFFF
-            
         }
 
-        p{
+        p {
             margin-top: 0;
             font-size: 2vw;
         }
@@ -46,50 +51,145 @@
             width: 100%;
         }
 
-        .box-email{
+        .box-email {
             margin-bottom: 0;
         }
     </style>
 
 </head>
+
 <body>
 
     <h1>Calculadora Vestibular Seriado UPE</h1>
     <h4>Alisshow Matérias Isoladas</h4>
     <h6>Prof. Alisson Coutinho </h6>
-    
-    
+
+
     <div class="formulario card">
         <div class="row">
-        <form class="col s12">
+            <form class="col s12">
 
-            <p>Entrar</p>
-            
-            <div class="row">
-                <div class="input-field col s12 box-email">
-                  <input id="email" type="email" class="validate">
-                  <label for="email">E-mail</label>
+                <p>Entrar</p>
+
+                <div class="row">
+                    <div class="input-field col s12 box-email">
+                        <input id="email" type="text" class="validate">
+                        <label for="email">E-mail</label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="input-field col s12 box-senha">
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Senha</label>
-                  </div>
-            </div>
+                <div class="row">
+                    <div class="input-field col s12 box-senha">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Senha</label>
+                    </div>
+                </div>
 
                 <div>
-                    <a class="waves-effect waves-light btn btn-entrar">ENTRAR</a>
+                    <a id="btn-entrar" class="waves-effect waves-light btn btn-entrar">ENTRAR</a>
                 </div>
-                  <br>
+                <br>
                 <div class="row">
                     <a href="#" class="esqueceu-senha">Esqueceu a senha?</a>
                 </div>
 
-        </form>
+            </form>
+        </div>
     </div>
-    </div>
-    
+
+
+    <script>
+
+            var requestURL = 'https://raw.githubusercontent.com/leosoftlima/SSA_CALCULADORA/master/dados_login.json';
+            var request = new XMLHttpRequest();
+            request.open('GET', requestURL);
+            request.responseType = 'json';
+            request.send();
+
+            request.onload = function () {
+
+            var dados_login = request.response;
+
+            var btn = document.getElementById("btn-entrar");
+
+            btn.addEventListener("click", function(){
+
+            var user = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            if(user == '' || password == ''){
+                alert('Usuário ou senha inválido!');
+            }
+
+            for(var i = 0; i < dados_login.length; i++){
+                if(user == dados_login[i].login && password == dados_login[i].senha){
+                alert('Login realizado sucesso!');
+            } 
+        }
+        
+    });
+
+}
+
+
+        
+        
+
+            
+
+            
+
+   
+            
+
+
+
+           
+                //alert(dados_login)
+                //console.log(dados_login)
+                //alert("Login: " + dados_login[0].login + ", Senha: " + dados_login[0].senha +
+                    //"Login: " + dados_login[1].login + ", Senha: " + dados_login[1].senha +
+                    //"Login: " + dados_login[2].login + ", Senha: " + dados_login[2].senha);
+                // console.log("Login: " + dados_login.login + ", Senha: " + dados_login.senha);
+            
+
+           
+
+
+
+        
+
+        
+
+
+        /*
+
+        var requestURL = 'https://raw.githubusercontent.com/leosoftlima/SSA_CALCULADORA/master/dados_login.json';
+        var request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+
+        request.onload = function () {
+
+            var dados_login = request.response;
+           
+                //alert(dados_login)
+                //console.log(dados_login)
+                alert("Login: " + dados_login[0].login + ", Senha: " + dados_login[0].senha +
+                    "Login: " + dados_login[1].login + ", Senha: " + dados_login[1].senha +
+                    "Login: " + dados_login[2].login + ", Senha: " + dados_login[2].senha);
+                // console.log("Login: " + dados_login.login + ", Senha: " + dados_login.senha);
+            }
+
+            */
+
+
+
+
+
+    </script>
+
 </body>
+
 </html>
