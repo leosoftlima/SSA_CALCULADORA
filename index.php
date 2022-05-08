@@ -31,7 +31,7 @@ if(isset($_POST['btn-entrar'])):
                 $dados = mysqli_fetch_array($resultado);
                 $_SESSION['logado'] = true;
                 $_SESSION['id_usuario'] = $dados['id_usuario'];
-                header('location: home.php');
+                header('location: confirmacaoSSA.php');
 
             else:
 
@@ -61,10 +61,16 @@ endif;
 
     <style>
 
+        .container{
+            align-items: center;
+            justify-content: center;
+            display: inline-block;
+        }
+
         .formulario {
             width: 25vw;
-            margin-top: 8vh;
-            margin-left: 37vw;
+            margin-top: 5vh;
+            margin-left: 30%;
             padding: 35px;
             text-align: center;
             background-color: #F0FFFF;
@@ -75,8 +81,13 @@ endif;
             margin-top: 5vw;
         }
 
-        .titulos {
+        h6{
+            
             text-align: center;
+        }
+
+        .titulos {
+           text-align: center;
         }
 
         p {
@@ -109,6 +120,12 @@ endif;
             margin-top: 10vw;
         }
 
+        .img-logo-nucleo-colegio{
+            float: left; 
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -122,10 +139,16 @@ if(!empty($erros)):
 endif;
 
 ?>
+
+        <div class="img-logo-nucleo-colegio">
+            <img src="img/img-nucleo-colegio.png" alt="">
+        </div>
+
+        <div class="container">
+        
         <div class="titulos">
             <h1>Calculadora Vestibular Seriado UPE</h1>
-            <h4>Alisshow Matérias Isoladas</h4>
-            <h6>Prof. Alisson Coutinho </h6>
+            <h6>Este produto é propriedade do Prof. Alisson Coutinho de Souza</h6>
         
         </div>
 
@@ -134,7 +157,7 @@ endif;
     <div class="formulario card">
         <div class="row">
             <form class="col s12" method="post">
-
+                <img src="img/img-logo-nucleo.png" alt="">
                 <p>Entrar</p>
 
                 <div class="row">
@@ -155,9 +178,7 @@ endif;
                     <button class="btn-entrar" type="submit" name="btn-entrar">Entrar</button>
                 </div>
                <br>
-                <div class="row">
-                    <a href="recuperarSenha.php" class="esqueceu-senha">Esqueceu a senha?</a>
-                </div>
+
 
             </form>
         </div>
@@ -165,5 +186,7 @@ endif;
     </div>
 
     </form>
+
+    </div>
 </body>
 </html>

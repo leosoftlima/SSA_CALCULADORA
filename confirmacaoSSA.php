@@ -24,10 +24,13 @@
         
         div.alert.alert-success{
             background-color: #F0FFFF;
-            width: 30vw;
+            width: 600px;
             text-align: center;
             font-size: large;
-            margin: 18% 0% 0% 32%;
+            /*margin: 18% 0% 0% 32%;*/
+            margin-top: 300px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         div.botoes{
@@ -41,10 +44,11 @@
         }
 
         img.logo-alisson{
-            float: left;
+           float: left;
             position: absolute;
-            width: 12vw;
-            margin: -13% 0% 0% 41%;
+            width: 200px;
+            margin-top: -240px;
+            margin-left: -97px;
         }
         
     </style>
@@ -54,7 +58,7 @@
 
 
 
-        <img class="logo-alisson" src="img/logo-alisson.png" alt="">
+        
     
 
     <a class="" href="sair.php">
@@ -62,6 +66,8 @@
     </a>
 
     <div class="alert alert-success" role="alert">
+
+    <img class="logo-alisson" src="img/logo-alisson.png" alt="">
         
         <h4 class="alert-heading">Confimação SSA</h4>
         <br>

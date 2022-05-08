@@ -2,9 +2,9 @@
 // Conexão com o banco de dados
 
 $servername = "localhost";
-$username = "root";
-$password = "";
-$db_name = "ssalisson";
+$username = "id18277536_user_alisson";
+$password = "Calculadora$2022";
+$db_name = "id18277536_db_ssalisson";
 
 $connect = mysqli_connect($servername, $username, $password, $db_name);
 
